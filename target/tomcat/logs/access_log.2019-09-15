@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [15/Sep/2019:00:51:35 +0800] "GET /travel/register.html HTTP/1.1" 200 6335 http-bio-80-exec-1 26
+0:0:0:0:0:0:0:1 - - [15/Sep/2019:00:51:35 +0800] "GET /travel/checkCode HTTP/1.1" 200 245 http-bio-80-exec-3 199
+0:0:0:0:0:0:0:1 - - [15/Sep/2019:00:55:25 +0800] "POST /travel/registUserServlet HTTP/1.1" 500 1825 http-bio-80-exec-1 75
+0:0:0:0:0:0:0:1 - - [15/Sep/2019:00:59:31 +0800] "POST /travel/registUserServlet HTTP/1.1" 500 1825 http-bio-80-exec-1 5296
+0:0:0:0:0:0:0:1 - - [15/Sep/2019:01:00:56 +0800] "POST /travel/registUserServlet HTTP/1.1" 500 1825 http-bio-80-exec-1 99
+0:0:0:0:0:0:0:1 - - [15/Sep/2019:01:03:58 +0800] "POST /travel/registUserServlet HTTP/1.1" 500 4706 http-bio-80-exec-1 459
+0:0:0:0:0:0:0:1 - - [15/Sep/2019:01:04:58 +0800] "POST /travel/registUserServlet HTTP/1.1" 200 41 http-bio-80-exec-1 475

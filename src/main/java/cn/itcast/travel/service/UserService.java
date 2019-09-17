@@ -5,4 +5,6 @@ import cn.itcast.travel.domain.User;
 public interface UserService {
 
     boolean regist(User user);
+
+    Boolean active(String code);
 }
