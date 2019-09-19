@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
         userdao.save(user);
 
         //发送邮件
-        String context="<a href='http://localhost/travel/activeUserServlet?code="+user.getCode()+"'>点击激活</a>";
+        String context="<a href='http://localhost/travel/user/active?code="+user.getCode()+"'>点击激活</a>";
         MailUtils.sendMail(user.getEmail(),context,"一封激活邮件");
         return true;
     }
@@ -44,5 +44,10 @@ public class UserServiceImpl implements UserService {
         }else{
             return false;
         }
+    }
+
+    @Override
+    public User login(User user) {
+        return userdao.findByUserNameAndPassword(user.getUsername(),user.getPassword());
     }
 }

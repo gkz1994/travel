@@ -11,7 +11,7 @@
 			$(function () {
 				$("#registerForm").submit(function(){
 				    if(checkUserName() && checkPassWord() && checkEmail() && checkPhone()){
-				        $.post("registUserServlet",$(this).serialize(),function(data){
+				        $.post("user/regist",$(this).serialize(),function(data){
 							if(data.flag){
 								location.href="register_ok.html";
 							}else{
