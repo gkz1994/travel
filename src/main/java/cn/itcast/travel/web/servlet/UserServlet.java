@@ -33,10 +33,7 @@ public class UserServlet extends BaseServlet {
             ResultInfo info=new ResultInfo();
             info.setFlag(false);
             info.setErrorMsg("验证码错误");
-            ObjectMapper objectMapper=new ObjectMapper();
-            String json=objectMapper.writeValueAsString(info);
-            response.setContentType("application/json;chacter=utf-8");
-            response.getWriter().write(json);
+            writerValueAsString(info,response);
             return;
         }
 
@@ -95,9 +92,7 @@ public class UserServlet extends BaseServlet {
             request.getSession().setAttribute("user",u);
         }
 
-        ObjectMapper mapper=new ObjectMapper();
-        response.setContentType("application/json;charset=utf-8");
-        mapper.writeValue(response.getOutputStream(),info);
+        writerValue(info,response);
     }
 
     public void exit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -123,8 +118,6 @@ public class UserServlet extends BaseServlet {
 
     public void findOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Object user=request.getSession().getAttribute("user");
-        ObjectMapper mapper=new ObjectMapper();
-        response.setContentType("application/json;charset=utf-8");
-        mapper.writeValue(response.getOutputStream(),user);
+        writerValue(user,response);
     }
 }
