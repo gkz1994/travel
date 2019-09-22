@@ -6,7 +6,9 @@ import cn.itcast.travel.domain.Category;
 import cn.itcast.travel.service.CategoryService;
 import cn.itcast.travel.util.JedisUtil;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Tuple;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -27,9 +29,9 @@ public class CategoryServiceImpl implements CategoryService {
         //1.1获取redis客户端
         Jedis jedis = JedisUtil.getJedis();
         //1.2可使用sortedset排序查询
-        Set<String> set = jedis.zrange("category", 0, -1);
+        Set<Tuple> tuples = jedis.zrangeWithScores("category", 0, -1);
         List<Category>cs=null;
-        if(set==null||set.size()==0){
+        if(tuples==null||tuples.size()==0){
             //3.如果为空,需要从数据库查询，在将数据存入redis
             //3.1从数据库查询
             cs=categoryDao.findAll();
@@ -38,7 +40,13 @@ public class CategoryServiceImpl implements CategoryService {
                 jedis.zadd("category",cs.get(i).getCid(),cs.get(i).getCname());
             }
         }else{
-
+            cs=new ArrayList<Category>();
+            for (Tuple tuple:tuples) {
+                Category category=new Category();
+                category.setCid((int)tuple.getScore());
+                category.setCname(tuple.getElement());
+                cs.add(category);
+            }
         }
         return cs;
     }

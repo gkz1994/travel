@@ -1,1 +1,3 @@
+cn\itcast\travel\dao\daoImpl\RouteDaoImpl.class
+cn\itcast\travel\web\servlet\RouteServlet.class
 cn\itcast\travel\web\filter\CharchaterFilter.class

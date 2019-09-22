@@ -107,7 +107,8 @@ public class UserServlet extends BaseServlet {
             Boolean flag=userService.active(code);
             String msg=null;
             if(flag){
-                msg="激活成功,请<a href='login'>登录</a>";
+                String url=request.getContextPath().replace("user","login.html");
+                msg="激活成功,请<a href='"+url+"'>登录</a>";
             }else{
                 msg="注册失败,请联系管理员";
             }
