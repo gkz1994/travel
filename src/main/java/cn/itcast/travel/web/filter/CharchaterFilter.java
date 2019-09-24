@@ -6,9 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * 解决全站乱码问题，处理所有的请求
- */
 @WebFilter("/*")
 public class CharchaterFilter implements Filter {
     @Override

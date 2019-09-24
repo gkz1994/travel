@@ -88,8 +88,8 @@
                     lis += li;
                 }
                 var nextNum = pb.currentPage + 1;
-                var nextPage = '<li onclick="javascipt:load(' + cid + ',' + nextNum + ',\'' + rname + '\')" class="threeword"><a href="javascript:void(0)">下一页</a></li>';
                 var lastPage = '<li onclick="javascipt:load(' + cid + ',' + pb.totalPage + ',\'' + rname + '\')" class="threeword"><a href="javascript:void(0)">末页</a></li>';
+                var nextPage = '<li onclick="javascipt:load(' + cid + ',' + nextNum + ',\'' + rname + '\')" class="threeword"><a href="javascript:void(0)">下一页</a></li>';
                 lis += nextPage;
                 lis += lastPage;
                 //将lis内容设置到 ul

@@ -117,7 +117,7 @@ public class UserServlet extends BaseServlet {
         }
     }
 
-    public void findOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void findUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Object user=request.getSession().getAttribute("user");
         writerValue(user,response);
     }

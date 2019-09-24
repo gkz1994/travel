@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface RouteService {
 
-    PageBean<Route>pageQuery(int currentPage, int pageSize,int cid,String rname);
+    PageBean<Route> pageQuery(int cid, int currentPage, int pageSize, String rname);
 
 
+    Route findOne(String rid);
 }
